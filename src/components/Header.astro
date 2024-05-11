@@ -1,0 +1,28 @@
+---
+import Menu from "./Menu.astro";
+
+---
+
+<header>
+  <div class="header-title">Mort Central</div>
+  <Menu></Menu>
+</header>
+
+<style>
+  header {
+    display: grid;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .header-title {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-family: 'Jost-VariableFont';
+    font-weight: 350;
+    padding-bottom: 1px;
+    line-height: 2.5rem;
+    border-bottom: solid 1px var(--white);
+  }
+  </style>

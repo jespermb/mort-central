@@ -1,0 +1,71 @@
+---
+const { text } = Astro.props;
+---
+
+<div class="footer">
+  <div class="text">{text}</div>
+  <div class="top-divider divider"></div>
+  <div class="bottom-divider divider"></div>
+</div>
+
+<style>
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .text {
+    padding: 0.5rem 1rem;
+    position: absolute;
+    background: #ffffff;
+    color: #252327;
+    z-index: 100;
+    margin-top: -1.1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  
+    &::first-letter {
+      font-size: 115%;
+    }
+  }
+  .divider {
+    &::before,
+    &::after {
+      position: absolute;
+      content: ' ';
+      display: block;
+      bottom: -13px;
+      width: 5px;
+      height: 5px;
+      border-style: solid;
+      border-width: 0 10px 20px 0;
+      border-color: #ffffff;
+    }
+    &::before {
+      transform: rotate(135deg);
+      left: -5px;
+    }
+    &::after {
+      transform: rotate(45deg);
+      right: -5px;
+    }
+  }
+  .top-divider {
+    background-color: #000000;
+    height: 4px;
+    width: 90%;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .bottom-divider {
+    background-color: #000000;
+    height: 4px;
+    width: 80%;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  </style>
+  

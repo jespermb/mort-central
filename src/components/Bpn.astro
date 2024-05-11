@@ -1,0 +1,340 @@
+---
+const { department, trainingPackage, details, color, station, payment, paymentGroup, scl } = Astro.props;
+---
+
+<div class="bpn">
+  <div class="left-top left">
+    <div class="row heading">Blueprint news</div>
+    <div class="row department">
+      <div class="headline">Departmental authorisation:</div>
+      <div class="field border">{ department }</div>
+    </div>
+    <div class="row package">
+      <div class="headline">Training package recommended:</div>
+      <div class="field border">{ trainingPackage }</div>
+    </div>
+    <div class="row details">
+      <span class="details-header">Details:</span>
+      <div class="details-text">{ details }</div>
+    </div>
+  </div>
+  <div class="right right-top">
+    <div class="row logo"></div>
+    <div class={`row color border color-${color}`}>
+      <div class="color-texts">
+        <span class="color-header">Colour code:</span>
+        <div class="color-text">{ color }</div>
+      </div>
+    </div>
+  </div>
+  <div class="left-bottom left">
+    <div class="column news">
+      <div class="item-text"><span class="item-text">Station analysis:</span><span class="box"></span></div>
+      <div class="item-text"><span class="item-text">Third eye news:</span><span class="box"></span></div>
+    </div>
+    <div class="column consolidation">
+      <span class="payment-header">Consolidated bonus scheme</span><br/>
+      { payment }
+    </div>
+    <div class="column payment">
+      <div class="per-ops"><span class="item-text">Per op:</span><span class="box"></span></div>
+      <div class="per-squad"><span class="item-text">Per squad:</span><span class="box"></span></div>
+    </div>
+    <div class="column scl-header">SCL</div>
+  </div>
+  <div class="right right-bottom">
+    <div class="row scl">{ scl }</div>
+  </div>
+</div>
+
+<style>
+  .bpn {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    height: 100%;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #3d4750;
+    gap: 16px;
+    padding: 12px 12px 12px 24px;
+    font-family: sans-serif;
+
+    .heading {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-align: right;
+      text-transform: uppercase;
+      border-bottom: #fff 2px solid;
+      letter-spacing: 10px;
+    }
+    .logo {
+      height: 4rem;
+    }
+    .headline {
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .field {
+      background-color: #e2e6e5;
+      padding: 3px;
+      border: #000 2px solid;
+      margin-left: 4rem;
+    }
+    .border {
+      border: #000 2px solid;
+    }
+    .package,
+    .department {
+      margin-bottom: 3px;
+    }
+    .details {
+      background-color: #e2e6e5;
+      color: #000;
+      text-align: left;
+      font-size: 1rem;
+      min-height: 260px;
+      padding: 3px;
+    }
+
+    .color {
+      padding: 5px;
+      height: 87%;
+      position: relative;
+      background-color: #fffffe;
+
+      &.color-green {
+        background-color: #5ba252;
+        color: #fff;
+      }
+      &.color-blue {
+        background-color: #2a3773;
+        color: #fff;
+      }
+      &.color-red {
+        background-color: #ff0000;
+        color: #fff;
+      }
+      &.color-yellow {
+        background-color: #fff151;
+      }
+      &.color-black {
+        background-color: #000000;
+        color: #fff;
+      }
+
+      .color-texts {
+        display: flex;
+        gap: 1rem;
+        transform-origin: top right;
+        transform: rotate(90deg) translate(100%);
+        position: absolute;
+        top: 2rem;
+        right: 5px;
+      }
+      .color-header {
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+        white-space: nowrap;
+      }
+      .color-text {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+      }
+    }
+    .left-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      border-top: solid 2px #fffffe;
+      padding-top: 10px;
+    }
+    .news {
+      display: grid;
+      > div {
+        display: flex;
+        flex-grow: 1;
+        font-family: 'RobotoCondensed';
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .item-text {
+        flex-grow: 1;
+      }
+      .box {
+        width: 14px;
+        height: 14px;
+        background-color: #e2e6e5;
+        display: inline-block;
+        border: solid 2px #000;
+        align-self: start;
+      }
+    }
+    .consolidation {
+      text-align: left;
+      background-color: #e2e6e5;
+      border: solid 2px #000;
+      padding: 2px;
+      color: #000;
+      font-size: 10px;
+      min-height: 50px;
+
+      .payment-header {
+        color: #000;
+        font-size: 10px;
+      }
+    }
+    .payment {
+      display: grid;
+      > div {
+        display: flex;
+        flex-grow: 1;
+        font-family: 'RobotoCondensed';
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      :last-child {
+        align-self: end;
+      }
+      .per-ops {
+        margin-bottom: 10px;
+      }
+      .item-text {
+        flex-grow: 1;
+      }
+      .box {
+        float: right;
+        width: 14px;
+        height: 14px;
+        background-color: #e2e6e5;
+        display: inline-block;
+        border: solid 2px #000;
+        align-self: start;
+      }
+    }
+    .scl-header {
+      display: grid;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: cebter;
+      letter-spacing: 4px;
+    }
+    .scl {
+      height: 100%;
+      background-color: #e2e6e5;
+      border: solid 2px #000;
+      display: grid;
+      color: #000;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+  @media screen and (min-width: 480px) {
+    .bpn {
+      grid-template-columns: 5fr 1fr;
+    }
+    .bpn .color .color-texts {
+      display: block;
+      top: -15px;
+    }
+    .bpn .color .color-text {
+      margin-left: 10rem;
+    }
+  }
+  @media screen and (min-width: 620px) {
+    .bpn {
+      grid-template-columns: 6fr 1fr;
+    }
+    .bpn .heading {
+      font-size: 3rem;
+      letter-spacing: 14px;
+    }
+    .bpn .left-bottom {
+      grid-template-columns: 3fr 5fr 2fr 1fr;
+    }
+    .bpn .news:last-child {
+      align-self: end;
+    }
+    .bpn .color {
+      display: block;
+    }
+    .bpn .color .color-header {
+      font-size: 1.2rem;
+    }
+    .bpn .color .color-text {
+      font-size: 32px;
+    }
+    .bpn .payment .per-ops {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: 750px) {
+    .bpn {
+      grid-template-columns: 7fr 1fr;
+      padding: 24px 24px 24px 75px;
+    }
+    .bpn .heading {
+      font-size: 2.3rem;
+      letter-spacing: 11px;
+    }
+    .bpn .scl-header {
+      font-size: 1.5rem;
+      letter-spacing: 5px;
+    }
+    .bpn .left-bottom {
+      display: grid;
+      grid-template-columns: 3fr 4fr 2fr 1fr;
+      gap: 10px;
+    }
+    .bpn .color {
+      height: 85%;
+    }
+    .bpn .news > div {
+      font-size: 14px;
+    }
+    .bpn .payment > div {
+      font-size: 14px;
+    }
+  }
+  @media screen and (min-width: 940px) {
+    .bpn {
+      grid-template-columns: 8fr 1fr;
+    }
+    .bpn .scl-header {
+      font-size: 1.5rem;
+      letter-spacing: 10px;
+    }
+    .bpn .left-bottom {
+      display: grid;
+      grid-template-columns: 2fr 3fr 1fr 1fr;
+      gap: 10px;
+    }
+    .bpn .color .color-header {
+      font-size: 1.5rem;
+    }
+    .bpn .color .color-text {
+      font-size: 42px;
+    }
+  }
+  @media screen and (min-width: 1000px){
+    .bpn .heading {
+      font-size: 3rem;
+      letter-spacing: 14px;
+    }
+  }
+</style>

@@ -1,15 +1,17 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticlePreview from '../components/ArticlePreview.astro';
+const allArticles = await Astro.glob('../pages/articles/*.md');
+const pageTitle = "Welcome to Mort central";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Hi Astro!!</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<p>The home of homebrew SLA content.</p>
+	{allArticles.map((article) => <ArticlePreview 
+		url={article.url} 
+		title={article.frontmatter.title} 
+		description={article.frontmatter.description}
+		author={article.frontmatter.author}
+		quote={article.frontmatter.quote}
+	/>)}
+</BaseLayout>

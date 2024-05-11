@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleFooter from '../components/ArticleFooter.astro';
+const allArticles = await Astro.glob('../pages/articles/*.md');
+const pageTitle = "About";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<div class="content">
+		<p>
+			My name i Jesper Bisgaard and I have been playing rpg's for the last
+			25 years. During this time I have tried a large number of different
+			games, and explored both fantasy and sci-fi. Rpg's have been my
+			favorite hobby for all these years and I have created a huge amount of
+			homebrew content for both genrers. I love creating content and
+			adventures/mission for my gaming group and I often feel the DM ich
+			when I get to play. This also means that I have loads of notebooks and
+			folders filled with random thoughs and ideas for games.
+		</p>
+		<p>
+			SLA Industries have been a favorite since I discovered it in a hobby
+			store many years ago. It was easy to pick up and play a game. So my
+			friends and I played it during holidays and vacations where our
+			regular games could not continue due to absence of players. I will use
+			this site to share the ideas i have had for SLA Industries content
+			over the years. I will also try to shout out other SLA Industries
+			content providers or share news from the community when I can.
+		</p>
+		<p>
+			I love thee brutal nature of SLA Indutries and that it dares to
+			involve subjects that are horrible such as torture and mass murdering.
+			But as always with games such as this its important to remember to
+			align with the gaming group on how you as a group want to address
+			these subject and if they should be part of the game. It can be
+			troublesome for people to be confronted with subjects that are morally
+			appoaling so always be sure to talk about it before introducing it
+			into any game. That being said in my group we find it interesting to
+			explore some of these subjects in a safe space where we aren't judged
+			for the actions of our characters. But at times it does require some
+			talks after the game has ended if one of the scenes crossed a line. So
+			I highly recommend you be mindfull of the group when playing a game
+			such as SLA Industries to make sure everyone is having a good time.
+			That being said I love the game and we have had many great sessions
+			with gore and heroics by the team of operatives on the group in Mort
+			city. Happy hunting to the enemies of SLA Industies.
+		</p>
+	</div>
+	<ArticleFooter text="About" />
+</BaseLayout>

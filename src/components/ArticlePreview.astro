@@ -1,0 +1,17 @@
+---
+import BlockQuote from "./BlockQuote.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+const { url, title, quote, author, description } = Astro.props;
+---
+
+<article v-for="article of articles" :key="article.slug">
+  <a href={url}>
+    <SectionTitle text={ title } />
+    {quote && <BlockQuote text={quote.text} name={ quote.name } />}
+    <div>
+      <p>by { author }</p>
+      <p>{ description }</p>
+    </div>
+  </a>
+</article>

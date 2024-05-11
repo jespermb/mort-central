@@ -1,0 +1,226 @@
+@font-face {
+  font-family: 'Jost-VariableFont';
+  src: url('/fonts/Jost-VariableFont.ttf');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoCondensed';
+  src: url('/fonts/RobotoCondensed-VariableFont_wght.ttf');
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+body {
+  --black: #252327;
+  --white: #ffffff;
+  --darkbrown: #343134;
+  --lightbrown: #ccc5b4;
+
+  background: #2a282f;
+  background-image: repeating-linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 60px
+    ),
+    linear-gradient(
+      60deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.1)
+    );
+  background-size: 70px 120px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
+}
+
+h1 {
+  line-height: 2.3rem;
+  border-bottom: solid 1px var(--white);
+  color: var(--white);
+  font-weight: 300;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-top: solid 1px var(--white);
+  border-bottom: solid 1px var(--white);
+  margin: 2px;
+}
+
+h1::first-letter {
+  font-size: 110%;
+}
+
+h2 {
+  line-height: 1.9rem;
+  border-bottom: solid 1px #ffffff;
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  border-top: solid 1px var(--black);
+  border-bottom: solid 1px var(--black);
+  margin: 2px;
+}
+
+h2::first-letter {
+  font-size: 110%;
+}
+
+h3 {
+  font-weight: 350;
+  font-size: 1.2rem;
+  color: #171717;
+  text-transform: uppercase;
+  border-bottom: solid 1px var(--black);
+  margin: 2px;
+
+  &::first-letter {
+    font-size: 115%;
+  }
+}
+
+p {
+  font-family: 'Quicksand',
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  margin-bottom: 0.7rem;
+}
+
+blockquote {
+  background-color: var(--darkbrown);
+  color: var(--lightbrown);
+  padding: 0.5rem;
+  font-style: italic;
+  margin: 0.5rem 0;
+
+  .name {
+    text-align: right;
+    font-style: normal;
+  }
+}
+
+.page-container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.page-content-wrapper {
+  background: #ffffff;
+  margin: 1rem;
+  max-width: 1000px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .content {
+    column-count: 1;
+    text-align: left;
+  }
+}
+
+.tag {
+  font-weight: 600;
+  font-size: 0.8rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+
+  &.author {
+    color: var(--black);
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  .page-content-wrapper {
+    padding: 2rem;
+    .content {
+      column-count: 2;
+    }
+  }
+}

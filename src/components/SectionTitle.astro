@@ -1,0 +1,17 @@
+---
+const { text } = Astro.props;
+---
+
+<div class="title-wrapper">
+  <h2>{text}</h2>
+</div>
+
+<style>
+  .title-wrapper {
+    padding: 0.3rem;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 0.7rem;
+  }
+  </style>

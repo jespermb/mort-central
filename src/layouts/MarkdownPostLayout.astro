@@ -1,0 +1,40 @@
+---
+import ArticleFooter from '../components/ArticleFooter.astro';
+import Bpn from '../components/Bpn.astro';
+import Tags from '../components/Tags.astro';
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+
+const formatDate = (date) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }
+  return new Date(date).toLocaleDateString('en', options)
+}
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <div>
+    <address class="author">
+      By
+      <a class="author" rel="author" href="/about">{frontmatter.author}</a>
+    </address>
+    on
+    <time datetime={frontmatter.pubDate} title={frontmatter.pubDate}>
+      { formatDate(frontmatter.pubDate) }
+    </time>
+  </div>
+  <Bpn 
+    department={frontmatter.bpn.department} 
+    trainingPackage={frontmatter.bpn.trainingPackage} 
+    details={frontmatter.bpn.details} 
+    color={frontmatter.bpn.color} 
+    station={frontmatter.bpn.station} 
+    payment={frontmatter.bpn.payment}
+    paymentGroup={frontmatter.bpn.paymentGroup} 
+    scl={frontmatter.bpn.scl} 
+  />
+  <div class="content">
+    <slot />
+  </div>
+  <ArticleFooter text={frontmatter.title} />
+  <Tags tags={frontmatter.tags} />
+</BaseLayout>

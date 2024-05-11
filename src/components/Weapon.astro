@@ -1,0 +1,87 @@
+---
+const { name, skill, dmg, mindmg, ad } = Astro.props;
+---
+
+<div class="weapon">
+  <div class="weapon--name">
+    <div class="weapon--padding">{{ name }}</div>
+  </div>
+  <div class="weapon--damage-wrapper">
+    <div class="weapon--skill-label">
+      <div class="weapon--padding">Skill:</div>
+    </div>
+    <div class="weapon--skill-value">
+      <div class="weapon--padding">{{ skill }}</div>
+    </div>
+    <div class="weapon--damage-box weapon--damage">
+      <div class="weapon--label">
+        <div class="weapon--padding">DMG</div>
+      </div>
+      <div class="weapon--value">
+        <div class="weapon--padding">{{ dmg }}</div>
+      </div>
+    </div>
+    <div class="weapon--damage-box weapon--min-damage">
+      <div class="weapon--label">
+        <div class="weapon--padding">MIN DMG</div>
+      </div>
+      <div class="weapon--value">
+        <div class="weapon--padding">{{ mindmg }}</div>
+      </div>
+    </div>
+    <div class="weapon--damage-box weapon--ad">
+      <div class="weapon--label"><div class="weapon--padding">AD</div></div>
+      <div class="weapon--value">
+        <div class="weapon--padding">{{ ad }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+  .weapon {
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    max-width: 500px;
+    border: solid 1px #252327;
+    margin: 0.5rem 0;
+    &--name {
+      background-color: #632221;
+      color: #ffffff;
+    }
+    &--padding {
+      padding: 5px;
+    }
+    &--skill-label {
+      grid-area: label;
+    }
+    &--skill-label,
+    &--label {
+      background-color: #252327;
+      color: #ffffff;
+    }
+    &--skill-value {
+      grid-area: value;
+    }
+    &--damage-wrapper {
+      display: grid;
+      grid-template-areas:
+        'label value value'
+        'damage mindamage ad';
+    }
+    &--damage {
+      grid-area: damage;
+    }
+    &--min-damage {
+      grid-area: mindamage;
+    }
+    &--ad {
+      grid-area: ad;
+    }
+    &--damage,
+    &--min-damage {
+      border-right: solid 1px #252327;
+    }
+  }
+  </style>
