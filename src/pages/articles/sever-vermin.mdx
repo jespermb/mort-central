@@ -1,0 +1,108 @@
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+title: "Scenario 1: Sever vermin"
+description: Department of sanitation needs help clearing a pack of carnivourous pigs.
+img: first-blog-post.jpg
+alt: Carnivourous pigs.
+author: Jesper Bisgaard
+pubDate: 2024-07-12
+tags: ["Blue bnp", "Sanitation", "Station analytis", "SCL 10"]
+quote:
+  text: I hate those pigs, they tear through anything in their search for food, its such a mess rooting them out.
+  name: Red flare, Operative Level 10
+bpn:
+  department: "Department of sanitation"
+  trainingPackage: "any"
+  details: "Department of sanitation needs help clearing a pack of carnivourous pigs from Downtown sever. Contact Alina Fearston for information on the task. +0.1 SCL Increase"
+  color: "blue"
+  station: "Station analysis"
+  payment: "100 credits per op."
+  paymentGroup: "op"
+  scl: "10"
+---
+import ArticleTitle from '../../components/ArticleTitle.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import SubSectionTitle from '../../components/SubSectionTitle.astro';
+import ArticleFooter from '../../components/ArticleFooter.astro';
+import Npc from '../../components/Npc.astro';
+
+<ArticleTitle title="Sever vermin"></ArticleTitle>
+
+A team of SLA operatives is needed to clear a pack of carnivorous pigs from the Severs in downtown.
+
+<SectionTitle text="History"></SectionTitle>
+
+10 days ago a pack of canivorous pigs found a hole in the wall to Canibal sector 1. The opening lead them to a section of the sewers were they have found lots of waste to feed on. 3 days ago one of the pigs broke through the sewer grate and began searching for food in the nearby nabourhood. This has caused the death of a couple of civilians and quite a lot of property damage, which got the Slivers involved. But since the pack lives in the severs they have opted to call in a team of Operatives to solve the situation, and thereby avoid having to deal with the issue. What is unknown to the Slivers is that the pigs have nested close to the terratory of a cell of Shi-An cultists, which will spure further BPN's.
+
+<SectionTitle text="Department of Sanitation"></SectionTitle>
+
+Upon application, the characters are asked to come to the Department of Sanitation to pick up the details. Getting there is not that difficult, especially if the squad has their own transport. The Department of Sanitation is housed next to the Head Office building and contains most of the bureaucratic functions of the Department. The building is a massive block of dark concrete but dispite its size it is dwarfed by the opulent size of the Head Office. They will be met there by a corporate (SCL 8.2a) named Alina Fearston who will explain the situation. The Slivers have a situation on their hands that they can't handle. A pack of carnivous pigs are causing terror in downtown section 12:304 - level 2, and the Slivers are as always unable to manage such petty tasks. Alina's contempt for the Slivers is very clear and she loaths having to spend her time managing such menial tasks. If the operatives conduct the operation quickly and efficiently they will gain her favour, which could be a boon in the future. 
+
+The operatives are to find server grate #257116 which is reported to be the center of all the trouble, they can also contact Sliver sergent Barring Garthon for more information on the situation.
+
+<SectionTitle text="Sever grate #257116"></SectionTitle>
+
+The sever grate is a large 1.5 meter tall grate in the side of a concrete foundation. Is is ment for cleaning crews to enter the severs when repairs are needed. The grate is damaged by erosion and there is a large hole in one side of the opening, with several scraps of flesh of the rusted bars indicating that whatever has entered through has been wounded in the process. It is not possible to identify the origin of the recidue because of the prolonged exposure to the elements.
+
+<SubSectionTitle text="Sliver sergent Barring Garthon"></SubSectionTitle>
+
+Sergant Barring is an older human past his prime. He is mostly just trying to survive until be can retire in a nice flat on the other side of the wall. His squad respects him because he has survived in the service as long as he has but are well aware that he is not going to stick his neck out any longer. Barring and his squad can take the Operatives to the grate and they can explain that the pigs have caused a lot of damage in the naibouring area as well as killed 3 locals who they dragged into the grate. Barring also reveals that a sever service crew went missing a few days ago, which he expects is because of the pigs.
+
+The service team was killed by Shi-An cultists and sacrificed in one of their blody rituals.
+
+<SectionTitle text="Entering the severs"></SectionTitle>
+
+The sever is dark, damn and smells horrible. Any player without protection from the stentch should receive a penalty to tests because its hard to concentrate in the foul smell. There is a small ledge that the team can use to move in either direction, but a observation test reveals a trail of blood tha tleads to the right. 
+
+A few meters down the drain some cables have been pulled loose and are blocking the path. The team either have to find a way to navigate around it safely or move through the muck in the canal. Again if they are not protected from the filth they might get infected with .... from moving in the unsanitary conditions. Hitting the cables will give an electric shock and cause 2 electric damage.
+
+Once past the cables they can follow the trail to a room with a large cistern. Here they start to hear the pigs in a room close by. The area around the cistern is very slippery, if the team rushes in this area they have to pass an athlethics test or fall into the water. They can also use this to their advantage, if they lure the pigs here they could potencially trick some of them to fall into the water pit. The pigs will charge towards the team from the opening that leads to their den, without thinking of the danger that the slippery area acound the cistern poses.
+
+If the team proceeds to the den, they enter an area that, if possible, smells even more horrible than the severs themselves. The floor is littered with the feses of the pigs and the remains of their victems are stewn across the floor. If the pig have not been loored elsewhere they are resting here, constantly squableing amongst themselves and having small fights over scraps.
+
+Once the pigs have been cleared the team can investigate the den and the remains left there. There is little of value left on the victems, the pigs have teared everything to pieces or trabled it. But on the northeren wall of the room they find clear sight of the She-an cult including what seems to be an address to a cult meeting place on the first basement level. It is in the neighbourhood above this level.
+
+<SectionTitle text="Reporting the She-an information"></SectionTitle>
+
+Should the team report their findings to Alina Fearston she if immidiately report it in the system and the team will be offered a new BPN to investigate the possible cult infestation.
+
+<SectionTitle text="Details"></SectionTitle>
+
+<Npc 
+  name={'Alina Fearston'} 
+  str={2} 
+  dex={3} 
+  know={4} 
+  conc={2} 
+  cha={3} 
+  cool={4} 
+  luck={2} 
+  init={+3} 
+  hp={12} 
+  closing={2} 
+  rushing={5} 
+  skills={["Detect 2", "Interrogate: 2", "Admin & Finance 3", "Computer 1", "Education (Psychology) 2", "Lore (SLA) 2", "Diplomacy (2)", "Persuasion (3)", "Intimidate (3)"]}
+  equipment={"Corporate business suite, Data sheet"}>
+</Npc>
+
+{/* <npc>
+  <template #text>
+    NPC: Sliver sergent Barring Garthon
+  </template>
+  <template #str>2</template>
+  <template #dex>3</template>
+  <template #know>4</template>
+  <template #conc>2</template>
+  <template #cha>3</template>
+  <template #cool>4</template>
+  <template #luck>2</template>
+  <template #init>+3</template>
+  <template #hp>12</template>
+  <template #closing>2</template>
+  <template #running>4</template>
+</npc> */}
+
+<SubSectionTitle text="Canevorous Pigs"></SubSectionTitle>
+
+See page 179 in the SLA industries handbook.
+

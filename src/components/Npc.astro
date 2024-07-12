@@ -1,0 +1,98 @@
+---
+import SkillBlock from "./SkillBlock.astro";
+import StatBlock from "./StatBlock.astro";
+import Weapon from "./Weapon.astro";
+const {
+  name,
+  str,
+  dex,
+  know,
+  conc,
+  cha,
+  cool,
+  luck,
+  init,
+  hp,
+  closing,
+  rushing,
+  equipment,
+  skills,
+  weapons,
+} = Astro.props;
+---
+
+<div class="npc">
+  <div class="npc--name">
+    <div class="npc--padding">{name}</div>
+  </div>
+  <StatBlock
+  stats={[
+    { label: "Str", value: str },
+    { label: "Dex", value: dex },
+    { label: "Know", value: know },
+    { label: "Conc", value: conc },
+  ]}
+  />
+  <StatBlock
+    stats={[
+      { label: "Cha", value: cha },
+      { label: "Cool", value: cool },
+      { label: "Luck", value: luck },
+      { label: "Init", value: init },
+    ]}
+  />
+  <StatBlock
+    stats={[
+      { label: "HP", value: hp, size: '2' },
+      { label: "Closing", value: closing },
+      { label: "Rushing", value: rushing },
+    ]}
+  />
+  <div class="breaker"></div>
+  <SkillBlock
+    skills={skills}
+  />
+  
+  {equipment ? <div class="breaker"></div><div class="equipment"><div class="equipment--header">Equipment:</div><div class="equipment--list">{equipment}</div></div> : ''}
+  {weapons ? <div class="breaker"></div>: ''}
+  {weapons && weapons.map((weapon) => (
+    <Weapon
+      name={weapon.name}
+      skill={weapon.skill}
+      dmg={weapon.dmg}
+      mindmg={weapon.mindmg}
+      ad={weapon.ad}
+    />
+  ))}
+</div>
+
+<style scoped>
+  .npc {
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    max-width: 500px;
+    margin: 0.5rem 0;
+  }
+  .npc--name {
+    background-color: #632221;
+    color: #ffffff;
+  }
+  .npc--padding {
+    padding: 5px;
+  }
+  .breaker {
+    padding-top: 10px;
+  }
+  .equipment {
+    border: solid 1px #252327;
+  }
+  .equipment--header {
+    background-color: #252327;
+    color: #ffffff;
+    padding: 5px;
+  }
+  .equipment--list {
+    padding: 5px;
+  }
+</style>

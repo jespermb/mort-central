@@ -10,7 +10,7 @@ const { url, title, quote, author, description } = Astro.props;
     <SectionTitle text={ title } />
     {quote && <BlockQuote text={quote.text} name={ quote.name } />}
     <div>
-      <p>by { author }</p>
+      <p>by { author.name }</p>
       <p>{ description }</p>
     </div>
   </a>

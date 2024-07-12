@@ -1,0 +1,45 @@
+---
+const {
+  skills
+} = Astro.props;
+---
+
+<div class="skill">
+  <div class="skill--heading">Skills</div>
+  <div class="skill--list">
+    {skills.map((skill) => (
+      <div class="skill--item skill--padding">{skill}</div>
+    ))}
+    {skills.length % 2 === 1 ? <div class="skill--item"></div> : ''}
+  </div>
+</div>
+
+<style scoped>
+  .skill {
+    border: solid 1px #252327;
+    border-bottom: none;
+  }
+  .skill .skill--item:nth-child(4n - 1),
+  .skill .skill--item:nth-child(4n) {
+    background-color: #d3d3d3;
+  }
+  .skill--list {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+  }
+  .skill--item {
+    border-bottom: solid 1px #252327;
+    border-right: solid 1px #252327;
+  }
+  .skill--heading {
+    background-color: #252327;
+    color: #ffffff;
+    padding: 5px;
+  }
+  .skill--padding {
+    padding: 5px;
+  }
+  .skill .skill--item:nth-child(even) {
+    border-right: none;
+  }
+</style>

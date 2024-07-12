@@ -1,0 +1,51 @@
+---
+const {
+  stats
+} = Astro.props;
+---
+
+<div class="stat">
+  {stats.map((stat) => (
+    <div class={`stat--box stat--size-${stat.size || '1'}`}>
+      <div class="stat--label">
+        <div class="stat--padding">{stat.label}</div>
+      </div>
+      <div class="stat--value">
+        <div class="stat--padding">{stat.value}</div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style scoped>
+  .stat {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    border: solid 1px #252327;
+  }
+  .stat--padding {
+    padding: 5px;
+  }
+  .stat--label {
+    background-color: #252327;
+    color: #ffffff;
+  }
+  .stat--value {
+    border-right: solid 1px #252327;
+  }
+  .stat .stat--box:last-child .stat--value {
+    border-right: none;
+  }
+  .stat--size-1 {
+    grid-column: span 1;
+  }
+  .stat--size-2 {
+    grid-column: span 2;
+  }
+  .stat--size-3 {
+    grid-column: span 3;
+  }
+  .stat--size-4 {
+    grid-column: span 4;
+  }
+</style>
